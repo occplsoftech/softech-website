@@ -15,7 +15,7 @@ import { ConfigService, RuntimeConfig } from '../core/config.service';
   styles: `
     :host { display: block; }
     p, address { margin: 0 0 6px; font-style: normal; }
-    a { color: var(--contact-link, var(--crimson)); }
+    a { color: var(--contact-link, var(--link)); }
     .legal-name { font-weight: 600; }
   `,
 })

@@ -1,4 +1,10 @@
-:host { display: block; }
+:host {
+  display: block;
+  /* The mockup is an illustration of a light UI: keep it light in the dark theme too. */
+  color-scheme: light;
+  --ink: #1e1b4b; --body: #475467; --slate: #667085; --line: #e4e7ec; --cloud: #F3F4F6;
+  --surface: #ffffff; --muted-bg: #eef0f5; --link: #E11D48;
+}
 .win {
   background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid rgb(255 255 255 / 14%);
   box-shadow: var(--shadow-lg); font-size: 12px; color: #475467; text-align: left;

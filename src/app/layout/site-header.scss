@@ -37,8 +37,14 @@
   width: 44px; height: 44px; border-radius: 50%; font-size: 1.35rem; cursor: pointer; align-items: center; justify-content: center;
 }
 
-@media (max-width: 920px) {
-  .island { padding-left: 18px; }
+.theme {
+  margin-left: auto; flex: none; background: rgb(255 255 255 / 8%); border: 1px solid rgb(255 255 255 / 14%); color: #fff;
+  width: 40px; height: 40px; border-radius: 50%; font-size: 1.15rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+  transition: background 0.15s; &:hover { background: rgb(255 255 255 / 16%); }
+}
+
+@media (max-width: 1080px) {
+  .island { padding-left: 18px; gap: 10px; }
   .toggle { display: inline-flex; }
   .nav {
     display: none; position: absolute; top: calc(100% + 10px); left: 0; right: 0; margin: 0;
@@ -50,4 +56,9 @@
   .nav ul { flex-direction: column; margin: 0; }
   .nav li a { padding: 14px 18px; font-size: 1.0625rem; border-radius: 16px; &.active::after { display: none; } }
   .cta { justify-content: space-between; padding: 8px 8px 8px 22px; font-size: 0.95rem; }
+}
+
+@media (max-width: 340px) {
+  .island { padding: 0 6px 0 12px; gap: 6px; }
+  .theme, .toggle { width: 36px; height: 36px; }
 }

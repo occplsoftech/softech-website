@@ -46,9 +46,9 @@ h1 { color: #fff; margin-bottom: 0.4em; font-size: clamp(2.5rem, 4.8vw, 4.4rem);
 
 /* bento */
 .bento { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: minmax(210px, auto); gap: 20px; }
-.b { color: var(--body); position: relative; display: flex; flex-direction: column; padding: 30px; border-radius: 24px; text-decoration: none; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; overflow: hidden;
+.b { color: var(--body); position: relative; display: flex; flex-direction: column; padding: 30px; border-radius: 24px; text-decoration: none; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; overflow: hidden;
   h3 { font-size: 1.3rem; margin-bottom: 8px; } p { margin: 0; font-size: 0.95rem; }
-  &:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: #b9c7fa; .b__go { background: var(--crimson); color: #fff; } }
+  &:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--card-hover-line); .b__go { background: var(--crimson); color: #fff; } }
   &__icon { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 13px; font-size: 22px; margin-bottom: 20px; color: var(--crimson); background: rgb(225 29 72 / 10%); }
   &__go { position: absolute; right: 22px; bottom: 22px; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: var(--cloud); color: var(--ink); transition: 0.2s; }
   &--hero { grid-row: span 2; background: linear-gradient(160deg, #1e1b4b, var(--navy) 60%); border-color: transparent; color: #d0d2f0; padding: 36px;
@@ -70,7 +70,7 @@ h1 { color: #fff; margin-bottom: 0.4em; font-size: clamp(2.5rem, 4.8vw, 4.4rem);
 .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; position: relative; }
 .steps::before { content: ''; position: absolute; left: 28px; right: 28px; top: 28px; height: 2px; background: linear-gradient(90deg, var(--crimson), var(--indigo), rgb(99 102 241 / 15%)); }
 .step { position: relative; h3 { font-size: 1.3rem; } p { margin: 0; }
-  &__n { position: relative; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; margin-bottom: 22px; background: #fff; border: 2px solid var(--crimson); color: var(--crimson); font: 800 1.05rem var(--font-head); box-shadow: 0 0 0 8px #fff; } }
+  &__n { position: relative; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; margin-bottom: 22px; background: var(--surface); border: 2px solid var(--crimson); color: var(--link); font: 800 1.05rem var(--font-head); box-shadow: 0 0 0 8px var(--bg); } }
 
 /* contact */
 .contact { position: relative; }

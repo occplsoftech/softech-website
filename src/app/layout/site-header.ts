@@ -1,3 +1,4 @@
+import { DOCUMENT } from '@angular/common';
 import { Component, ElementRef, HostListener, inject, signal, viewChild } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { filter } from 'rxjs';
@@ -28,6 +29,11 @@ import { Icon } from '../shared/icon';
             </a>
           </nav>
 
+          <button type="button" class="theme" aria-label="Switch between light and dark theme" (click)="toggleTheme()">
+            <app-icon class="theme-icon--moon" name="moon" />
+            <app-icon class="theme-icon--sun" name="sun" />
+          </button>
+
           <button #toggle type="button" class="toggle" [attr.aria-expanded]="open()" aria-controls="primary-nav" (click)="open.set(!open())">
             <app-icon [name]="open() ? 'close' : 'menu'" />
             <span class="visually-hidden">{{ open() ? 'Close menu' : 'Open menu' }}</span>
@@ -43,9 +49,20 @@ export class SiteHeader {
   protected readonly open = signal(false);
   protected readonly scrolled = signal(false);
   private readonly toggle = viewChild.required<ElementRef<HTMLButtonElement>>('toggle');
+  private readonly doc = inject(DOCUMENT);
 
   constructor() {
     inject(Router).events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe(() => this.open.set(false));
+  }
+
+  /** Light/dark. The choice is saved; until one is made the system setting applies (see styles.scss). */
+  protected toggleTheme(): void {
+    const root = this.doc.documentElement;
+    const dark = this.doc.defaultView?.matchMedia('(prefers-color-scheme: dark)').matches;
+    const current = root.dataset['theme'] ?? (dark ? 'dark' : 'light');
+    const next = current === 'dark' ? 'light' : 'dark';
+    root.dataset['theme'] = next;
+    try { localStorage.setItem('theme', next); } catch { /* storage unavailable: choice lasts for this visit */ }
   }
 
   @HostListener('window:scroll')

@@ -22,6 +22,8 @@ const PATHS: Record<string, string> = {
   close: 'M6 6l12 12M18 6L6 18',
   clock: 'M12 21a9 9 0 100-18 9 9 0 000 18zM12 7v5l3 2',
   mail: 'M3 6h18v12H3zM3 7l9 7 9-7',
+  sun: 'M12 16a4 4 0 100-8 4 4 0 000 8zM12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4',
+  moon: 'M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z',
 };
 
 @Component({
