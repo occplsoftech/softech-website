@@ -1,0 +1,83 @@
+<div class="wrap">
+  @if (status() === 'success') {
+    <div class="result" data-result tabindex="-1" role="status">
+      <span class="ok-icon" aria-hidden="true">✓</span>
+      <h3>Thanks, your enquiry has been received.</h3>
+      <p>We will review it and get back to you at the email address you provided.</p>
+      <button type="button" class="btn btn--secondary btn--sm" (click)="another()">Send another enquiry</button>
+    </div>
+  } @else {
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <div class="row">
+        <div class="field">
+          <label [for]="id('name')">Full name</label>
+          <input [id]="id('name')" formControlName="fullName" type="text" autocomplete="name"
+            [attr.aria-invalid]="error('fullName') ? 'true' : null" [attr.aria-describedby]="error('fullName') ? id('name-err') : null" />
+          @if (error('fullName'); as e) { <p class="err" [id]="id('name-err')">{{ e }}</p> }
+        </div>
+        <div class="field">
+          <label [for]="id('company')">Company name</label>
+          <input [id]="id('company')" formControlName="company" type="text" autocomplete="organization"
+            [attr.aria-invalid]="error('company') ? 'true' : null" [attr.aria-describedby]="error('company') ? id('company-err') : null" />
+          @if (error('company'); as e) { <p class="err" [id]="id('company-err')">{{ e }}</p> }
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label [for]="id('email')">Work email</label>
+          <input [id]="id('email')" formControlName="email" type="email" autocomplete="email" inputmode="email"
+            [attr.aria-invalid]="error('email') ? 'true' : null" [attr.aria-describedby]="error('email') ? id('email-err') : null" />
+          @if (error('email'); as e) { <p class="err" [id]="id('email-err')">{{ e }}</p> }
+        </div>
+        <div class="field">
+          <label [for]="id('phone')">Phone number <span class="opt">(optional)</span></label>
+          <input [id]="id('phone')" formControlName="phone" type="tel" autocomplete="tel" inputmode="tel"
+            [attr.aria-invalid]="error('phone') ? 'true' : null" [attr.aria-describedby]="error('phone') ? id('phone-err') : null" />
+          @if (error('phone'); as e) { <p class="err" [id]="id('phone-err')">{{ e }}</p> }
+        </div>
+      </div>
+
+      <div class="field">
+        <label [for]="id('type')">Enquiry type</label>
+        <select [id]="id('type')" formControlName="enquiryType" [attr.aria-invalid]="error('enquiryType') ? 'true' : null">
+          @for (t of types; track t.value) { <option [value]="t.value">{{ t.label }}</option> }
+        </select>
+      </div>
+
+      <div class="field">
+        <label [for]="id('message')">Business requirements</label>
+        <textarea [id]="id('message')" formControlName="message" rows="5" maxlength="2000"
+          placeholder="What are you trying to solve? Mention your current process, team size or timeline if useful."
+          [attr.aria-invalid]="error('message') ? 'true' : null" [attr.aria-describedby]="error('message') ? id('message-err') : null"></textarea>
+        @if (error('message'); as e) { <p class="err" [id]="id('message-err')">{{ e }}</p> }
+      </div>
+
+      <!-- Honeypot: hidden from people and assistive tech; bots tend to fill it. -->
+      <div class="hp" aria-hidden="true">
+        <label [for]="id('website')">Leave this field empty</label>
+        <input [id]="id('website')" formControlName="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <div class="field consent">
+        <label class="check">
+          <input type="checkbox" formControlName="consent" [attr.aria-invalid]="error('consent') ? 'true' : null"
+            [attr.aria-describedby]="error('consent') ? id('consent-err') : null" />
+          <span>I agree that SKRA Tech may use these details to respond to my enquiry, as described in the
+            <a routerLink="/privacy" target="_blank">Privacy Policy</a>.</span>
+        </label>
+        @if (error('consent'); as e) { <p class="err" [id]="id('consent-err')">{{ e }}</p> }
+      </div>
+
+      @if (needsToken()) { <div data-turnstile class="turnstile"></div> }
+
+      @if (status() === 'error') {
+        <div class="alert" role="alert">{{ failure() }}</div>
+      }
+
+      <button type="submit" class="btn btn--primary" [disabled]="status() === 'submitting'">
+        {{ status() === 'submitting' ? 'Sending…' : 'Send enquiry' }}
+      </button>
+    </form>
+  }
+</div>

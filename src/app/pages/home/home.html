@@ -1,0 +1,175 @@
+<section class="hero dark glow-bg">
+  <div class="aurora aurora--a" aria-hidden="true"></div><div class="aurora aurora--b" aria-hidden="true"></div>
+  <app-network-art class="hero__net" uid="hero" />
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <span class="eyebrow reveal">Build. Automate. Scale.</span>
+      <h1 class="h-display reveal" style="animation-delay: 60ms">
+        Software That Moves Your Business <span class="text-grad">Forward.</span>
+      </h1>
+      <p class="lead reveal" style="animation-delay: 120ms">
+        We build practical software products and custom business solutions that help companies streamline operations,
+        automate workflows, and scale with confidence.
+      </p>
+      <div class="actions reveal" style="animation-delay: 180ms">
+        <a class="btn btn--primary" routerLink="/products">Explore Our Products</a>
+        <a class="btn btn--secondary" routerLink="/contact" [queryParams]="{ type: 'custom-software' }">Discuss Your Project</a>
+      </div>
+      <ul class="hero__facts reveal" style="animation-delay: 240ms">
+        <li><app-icon name="check" /> Logistics product live at a client</li>
+        <li><app-icon name="check" /> Custom software &amp; SaaS builds</li>
+      </ul>
+    </div>
+
+    <figure class="scene reveal" style="animation-delay: 200ms">
+      <div class="orb" aria-hidden="true"></div>
+      <div class="layer layer--back" aria-hidden="true"><app-mockup variant="shipments" label="" /></div>
+      <div class="layer layer--main"><app-mockup variant="dashboard" label="Illustrative mockup of a logistics operations dashboard" /></div>
+      <div class="float float--a" aria-hidden="true"><span class="dot"></span> Load sheet created</div>
+      <div class="float float--b" aria-hidden="true"><span class="dot dot--g"></span> Proof of delivery captured</div>
+      <div class="journey" aria-hidden="true">
+        <b>Shipment journey</b>
+        <ol>
+          <li class="done"><i></i>Booked</li>
+          <li class="done"><i></i>At hub</li>
+          <li class="now"><i></i>Out for delivery</li>
+          <li><i></i>Delivered</li>
+        </ol>
+      </div>
+      <figcaption>Illustrative mockup with sample data, not an actual product screenshot.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="marquee dark" aria-label="What we build">
+  <div class="marquee__track">
+    @for (n of [1, 2]; track n) {
+      <ul [attr.aria-hidden]="n === 2 ? 'true' : null">
+        @for (m of marquee; track m) { <li>{{ m }}</li> }
+      </ul>
+    }
+  </div>
+</div>
+
+<section class="section bas" aria-labelledby="bas-h">
+  <div class="container">
+    <h2 class="visually-hidden" id="bas-h">Build. Automate. Scale.</h2>
+    <div class="bas__grid">
+      @for (b of bas; track b.word) {
+        <article class="bas__col" appReveal>
+          <span class="bas__word text-grad">{{ b.word }}.</span>
+          <p>{{ b.text }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--cloud" aria-labelledby="proof-h">
+  <div class="container split">
+    <div class="split__head">
+      <span class="eyebrow">Credibility</span>
+      <h2 class="h-section" id="proof-h">Built Around Real Business Needs.</h2>
+      <p class="lead">SKRA Tech has delivered a logistics software solution that is operating at a client business, and is now working on another logistics implementation. Our focus is real execution and practical problem-solving.</p>
+    </div>
+    <ul class="proof">
+      @for (p of proof; track p.title; let i = $index) {
+        <li>
+          <span class="proof__n">0{{ i + 1 }}</span>
+          <div>
+            <h3>{{ p.title }}</h3>
+            <p>{{ p.text }}</p>
+          </div>
+          <span class="proof__i"><app-icon [name]="p.icon" /></span>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section class="section feature-wrap" aria-labelledby="product-h">
+  <div class="container">
+    <div class="panel dark glow-bg">
+      <app-network-art class="panel__net" uid="panel" />
+      <div class="panel__copy">
+        <span class="eyebrow">Featured product</span>
+        <h2 class="h-section" id="product-h">Courier &amp; Logistics Management Software</h2>
+        <p class="lead">Smarter courier operations. Better business visibility. Software built around the way logistics companies work.</p>
+        <ul class="pills">
+          @for (f of pills; track f) { <li>{{ f }}</li> }
+        </ul>
+        <div class="actions">
+          <a class="btn btn--primary" routerLink="/contact" [queryParams]="{ type: 'product-demo' }">Request a Product Demo</a>
+          <a class="btn btn--secondary" routerLink="/products/logistics">See what it covers</a>
+        </div>
+      </div>
+      <figure class="panel__visual">
+        <app-mockup variant="loadsheet" label="Illustrative mockup of a load sheet screen" />
+        <figcaption>Illustrative mockup with sample data, not an actual product screenshot.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cloud" aria-labelledby="sol-h">
+  <div class="container">
+    <app-section-heading eyebrow="Solutions" title="A product, and the team to build yours." lead="Our logistics software is a ready product. Everything else is a development capability we offer to clients." id="sol-h" />
+    <div class="bento">
+      @for (s of solutions; track s.id; let i = $index) {
+        <a class="b" [class.b--hero]="i === 0" [routerLink]="s.link ?? '/solutions'" [fragment]="s.link ? undefined : s.id">
+          <span class="b__icon"><app-icon [name]="s.icon" /></span>
+          <span class="tag" [class.tag--muted]="s.kind === 'Capability'">{{ s.kind === 'Product' ? 'Existing product' : 'Development capability' }}</span>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.summary }}</p>
+          @if (i === 0) { <div class="b__shot" aria-hidden="true"><app-mockup variant="loadsheet" label="" /></div> }
+          <span class="b__go" aria-hidden="true"><app-icon name="arrow" /></span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark why" aria-labelledby="why-h">
+  <div class="container dark why__grid">
+    <div class="why__head">
+      <span class="eyebrow">Why SKRA Tech</span>
+      <h2 class="h-section" id="why-h">How we approach software.</h2>
+      <p class="lead">Practical choices over buzzwords, from the first workshop to the tenth release.</p>
+    </div>
+    <ul class="why__list">
+      @for (w of why; track w.title; let i = $index) {
+        <li>
+          <span class="why__n">0{{ i + 1 }}</span>
+          <div><h3>{{ w.title }}</h3><p>{{ w.text }}</p></div>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="proc-h">
+  <div class="container">
+    <app-section-heading eyebrow="Development process" title="From first conversation to continued improvement." id="proc-h" />
+    <ol class="steps">
+      @for (p of process; track p.n) {
+        <li class="step">
+          <span class="step__n">{{ p.n }}</span>
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.text }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="section section--dark contact glow-bg" id="start" aria-labelledby="contact-h">
+  <div class="container contact__grid dark">
+    <div>
+      <span class="eyebrow">Get in touch</span>
+      <h2 class="h-section" id="contact-h">Let's Build Something That Works for Your Business.</h2>
+      <p class="lead">Tell us about your operational challenges or software requirements. We'll discuss the right approach for your business.</p>
+      <p class="note">Start a conversation using the form. We use your details only to respond to your enquiry.</p>
+    </div>
+    <app-enquiry-form uid="home" source="home" />
+  </div>
+</section>

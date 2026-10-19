@@ -1,0 +1,106 @@
+<app-page-hero [eyebrow]="c.intro.eyebrow" [title]="c.intro.title" [lead]="c.intro.lead">
+  <a class="btn btn--primary" routerLink="/contact" [queryParams]="{ type: 'product-demo' }">Request a Product Demo</a>
+  <a class="btn btn--secondary" href="#features">See what it covers</a>
+</app-page-hero>
+
+<section class="section">
+  <div class="container intro">
+    <p class="lead">{{ c.intro.body }}</p>
+  </div>
+</section>
+
+<section class="section section--cloud" aria-labelledby="problems-h">
+  <div class="container">
+    <app-section-heading id="problems-h" eyebrow="The problem" title="What it is built to address." />
+    <div class="grid grid--4">
+      @for (p of c.problems; track p.title) {
+        <article class="card"><h3>{{ p.title }}</h3><p>{{ p.text }}</p></article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features" aria-labelledby="features-h">
+  <div class="container">
+    <app-section-heading id="features-h" eyebrow="Features" title="What the software covers." lead="These capabilities are part of the product today." />
+    <div class="grid grid--4">
+      @for (f of c.features; track f.title) {
+        <article class="card">
+          <div class="card__icon"><app-icon [name]="f.icon" /></div>
+          <h3>{{ f.title }}</h3>
+          <p>{{ f.text }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--cloud" aria-labelledby="screens-h">
+  <div class="container">
+    <app-section-heading id="screens-h" eyebrow="Screens" title="A look at the interface." lead="Representative illustrations of the kinds of screens involved. They are not actual product screenshots." />
+    <div class="grid grid--3 screens">
+      @for (s of c.screens; track s.title) {
+        <figure>
+          @if (s.src) { <img [src]="s.src" [alt]="s.alt ?? s.title" loading="lazy" /> }
+          @else { <app-mockup [variant]="s.variant" [label]="'Illustrative mockup: ' + s.title" /> }
+          <figcaption><strong>{{ s.title }}.</strong> {{ s.caption }}</figcaption>
+        </figure>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="flow-h">
+  <div class="container">
+    <app-section-heading id="flow-h" eyebrow="Workflow" title="How a shipment moves." />
+    <ol class="flow">
+      @for (w of c.workflow; track w.title; let i = $index) {
+        <li><span class="flow__n">{{ i + 1 }}</span><h3>{{ w.title }}</h3><p>{{ w.text }}</p></li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="section section--cloud" aria-labelledby="who-h">
+  <div class="container">
+    <app-section-heading id="who-h" eyebrow="Who it is for" title="Ideal customer profiles." />
+    <div class="grid grid--3">
+      @for (p of c.profiles; track p.title) {
+        <article class="card"><h3>{{ p.title }}</h3><p>{{ p.text }}</p></article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="impl-h">
+  <div class="container">
+    <app-section-heading id="impl-h" eyebrow="Implementation" title="How we get you live." />
+    <ol class="flow flow--4">
+      @for (w of c.implementation; track w.title; let i = $index) {
+        <li><span class="flow__n">{{ i + 1 }}</span><h3>{{ w.title }}</h3><p>{{ w.text }}</p></li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="section section--cloud" aria-labelledby="faq-h">
+  <div class="container container--narrow">
+    <app-section-heading id="faq-h" eyebrow="FAQ" title="Frequently asked questions." />
+    <div class="faqs">
+      @for (f of c.faqs; track f.q) {
+        <details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="demo-h">
+  <div class="container demo">
+    <div>
+      <span class="eyebrow">Demo enquiry</span>
+      <h2 class="h-section" id="demo-h">See it working for your operation.</h2>
+      <p class="lead">Tell us about your business and we will arrange a product walkthrough.</p>
+    </div>
+    <app-enquiry-form uid="logi" source="products/logistics" type="product-demo" />
+  </div>
+</section>
