@@ -50,7 +50,7 @@ import { Icon } from '../shared/icon';
   `,
   styles: `
     .foot { position: relative; overflow: hidden; background: var(--navy); color: #b9bce6; padding-top: 80px;
-      background: radial-gradient(60% 50% at 80% 0%, rgb(99 102 241 / 22%), transparent 70%), var(--navy); }
+      background: radial-gradient(60% 55% at 80% 0%, rgb(225 29 72 / 34%), transparent 70%), var(--navy); }
     .foot::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, #818cf8, #E11D48, transparent); }
     .lead-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-bottom: 56px; margin-bottom: 56px; border-bottom: 1px solid var(--line-dark); }
     .lead-row h2 { color: #fff; font-size: clamp(2rem, 4.4vw, 3.4rem); margin: 0; letter-spacing: -0.04em; }

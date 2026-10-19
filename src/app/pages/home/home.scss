@@ -8,7 +8,7 @@ h1 { color: #fff; margin-bottom: 0.4em; font-size: clamp(2.5rem, 4.8vw, 4.4rem);
 
 /* 3D scene */
 .scene { position: relative; margin: 0; perspective: 1800px; padding: 0 0 56px; }
-.orb { position: absolute; inset: -10% -6% 0 10%; border-radius: 50%; background: radial-gradient(closest-side, rgb(99 102 241 / 55%), rgb(225 29 72 / 18%) 60%, transparent 72%); filter: blur(30px); }
+.orb { position: absolute; inset: -10% -6% 0 10%; border-radius: 50%; background: radial-gradient(closest-side, rgb(225 29 72 / 50%), rgb(99 102 241 / 22%) 60%, transparent 72%); filter: blur(30px); }
 .layer { position: relative; transform-style: preserve-3d; }
 .layer--main { transform: rotateY(-12deg) rotateX(5deg) rotateZ(1deg); transition: transform 0.6s ease; z-index: 2;
   app-mockup { filter: drop-shadow(0 40px 60px rgb(0 0 0 / 55%)); } }

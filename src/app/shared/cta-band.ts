@@ -22,10 +22,11 @@ import { RouterLink } from '@angular/router';
     .band {
       display: flex; gap: 32px; align-items: center; justify-content: space-between; flex-wrap: wrap;
       padding: clamp(32px, 5vw, 56px); border-radius: var(--r-lg); color: #d0d2f0;
-      background: radial-gradient(70% 140% at 100% 0%, rgb(99 102 241 / 45%), transparent 60%), var(--navy);
+      background: radial-gradient(70% 140% at 100% 0%, rgb(255 255 255 / 16%), transparent 60%), linear-gradient(120deg, #E11D48, #BE123C 65%, #9F1239);
     }
     h2 { color: #fff; font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 0.3em; max-width: 24ch; }
-    .lead { margin: 0; max-width: 52ch; }
+    .lead { margin: 0; max-width: 52ch; color: rgb(255 255 255 / 92%); }
+    .band .btn--primary { background: #fff; color: var(--crimson); box-shadow: 0 10px 28px -10px rgb(0 0 0 / 45%); }
   `,
 })
 export class CtaBand {

@@ -21,8 +21,8 @@ import { NetworkArt } from './network-art';
       position: relative; overflow: hidden; color: #d0d2f0;
       padding-block: calc(var(--header-h) + clamp(48px, 7vw, 96px)) clamp(48px, 7vw, 88px);
       background:
-        radial-gradient(60% 90% at 85% 0%, rgb(99 102 241 / 38%), transparent 60%),
-        radial-gradient(50% 80% at 0% 100%, rgb(225 29 72 / 26%), transparent 60%),
+        radial-gradient(65% 95% at 85% 0%, rgb(225 29 72 / 46%), transparent 60%),
+        radial-gradient(55% 85% at 0% 100%, rgb(225 29 72 / 40%), transparent 60%),
         linear-gradient(rgb(255 255 255 / 3.5%) 1px, transparent 1px) 0 0 / 56px 56px,
         linear-gradient(90deg, rgb(255 255 255 / 3.5%) 1px, transparent 1px) 0 0 / 56px 56px,
         var(--navy);
