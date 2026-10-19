@@ -51,6 +51,19 @@ jobs:
           printf '%s\n' "$EC2_SSH_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           printf '%s\n' "$EC2_KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+          # Sanity checks, so a failure says what is wrong. Only public information is printed.
+          ssh-keygen -y -f ~/.ssh/deploy_key > /dev/null \
+            || { echo "::error::EC2_SSH_KEY is not a valid private key (paste the whole file, BEGIN and END lines included)"; exit 1; }
+          echo "Key fingerprint (compare with: ssh-keygen -lf ~/.ssh/softech_deploy.pub):"
+          ssh-keygen -lf ~/.ssh/deploy_key
+          ssh-keygen -F "$EC2_HOST" -f ~/.ssh/known_hosts > /dev/null \
+            || { echo "::error::EC2_KNOWN_HOSTS has no entry for $EC2_HOST (re-run: ssh-keyscan -H $EC2_HOST)"; exit 1; }
+          ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=20 \
+            -o StrictHostKeyChecking=yes "$EC2_USER@$EC2_HOST" \
+            "echo ssh-ok; test -d $SITE_DIR && echo site-dir-ok; command -v rsync" \
+            || { echo "::error::SSH connection failed (see the message above: timeout = firewall, permission denied = key)"; exit 1; }
+
           rsync -az --delete \
             -e "ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
             dist/softech-website/browser/ "$EC2_USER@$EC2_HOST:$SITE_DIR"
