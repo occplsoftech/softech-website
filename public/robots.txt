@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://skra.in/sitemap.xml
+Sitemap: https://occplsoftech.com/sitemap.xml

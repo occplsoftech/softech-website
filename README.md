@@ -44,7 +44,7 @@ The backend in the courier repo (`/api/v1/leads`) is tied to the Amazing Logisti
 Fully static site: every route is prerendered to HTML (`/about/index.html`, etc.), so no server code and no SPA fallback are needed. Any static host works (S3/CloudFront, Netlify, Cloudflare Pages, nginx). Configure the host to serve `404.html` for missing paths.
 - Docker: `docker build -t softech-site . && docker run -p 8080:80 softech-site` (nginx.conf included, SPA fallback + caching).
 - Otherwise upload the contents of `dist/softech-website/browser`.
-- Domain: canonical/sitemap/OG URLs assume `https://skra.in` (`SITE.url`, `public/sitemap.xml`, `public/robots.txt`). Change all three if different; point DNS at the host and enable HTTPS.
+- Domain: canonical/sitemap/OG URLs assume `https://occplsoftech.com` (`SITE.url`, `src/index.html`, `public/sitemap.xml`, `public/robots.txt`). Change all of them if different; point DNS at the host and enable HTTPS.
 
 ## Updating content
 - Logistics page copy, features, FAQs, screenshots: `src/app/pages/logistics/logistics.content.ts`. Set `src` on a screen to swap a mockup for a real image in `public/images/`.
