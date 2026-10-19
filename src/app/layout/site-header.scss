@@ -4,16 +4,17 @@
 
 .island {
   position: relative; display: flex; align-items: center; justify-content: space-between; gap: 20px;
-  height: 64px; padding: 0 10px 0 22px; border-radius: 999px; color: #fff;
+  height: 80px; padding: 0 10px 0 12px; border-radius: 999px; color: #fff;
   background: linear-gradient(180deg, rgb(255 255 255 / 9%), rgb(255 255 255 / 4%)), rgb(49 46 129 / 78%);
   border: 1px solid rgb(255 255 255 / 14%);
   box-shadow: 0 10px 40px -12px rgb(0 0 0 / 55%), inset 0 1px 0 rgb(255 255 255 / 10%);
   backdrop-filter: blur(18px) saturate(160%);
   transition: background 0.25s ease, height 0.25s ease, box-shadow 0.25s ease;
 }
-.scrolled .island { height: 58px; background: rgb(38 35 105 / 94%); box-shadow: 0 14px 44px -10px rgb(0 0 0 / 65%); }
+.scrolled .island { height: 68px; background: rgb(38 35 105 / 94%); box-shadow: 0 14px 44px -10px rgb(0 0 0 / 65%); }
 
-.logo { color: #fff; text-decoration: none; border-radius: 10px; }
+.logo { color: #fff; text-decoration: none; border-radius: 14px; display: inline-flex; app-brand { --logo-h: 64px; } }
+.scrolled .logo app-brand { --logo-h: 52px; }
 .nav { display: flex; align-items: center; flex: 1; justify-content: space-between; margin-left: 28px; }
 .nav ul { display: flex; gap: 2px; margin: 0 auto; }
 .nav li a {
@@ -26,7 +27,7 @@
 
 .cta {
   display: inline-flex; align-items: center; gap: 12px; padding: 7px 7px 7px 20px; border-radius: 999px;
-  background: #fff; color: var(--ink); font: 600 0.875rem/1 var(--font-body); text-decoration: none; white-space: nowrap;
+  background: #fff; color: #1e1b4b; font: 600 0.875rem/1 var(--font-body); text-decoration: none; white-space: nowrap;
   box-shadow: 0 6px 20px -6px rgb(255 255 255 / 35%); transition: transform 0.18s, box-shadow 0.18s;
   &:hover { transform: translateY(-1px); box-shadow: 0 10px 26px -6px rgb(255 255 255 / 45%); .cta__arrow { transform: translateX(2px); } }
   &__arrow { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; background: var(--grad); color: #fff; font-size: 17px; transition: transform 0.18s; }
@@ -44,7 +45,8 @@
 }
 
 @media (max-width: 1080px) {
-  .island { padding-left: 18px; gap: 10px; }
+  .island { padding-left: 10px; gap: 10px; height: 68px; }
+  .logo app-brand, .scrolled .logo app-brand { --logo-h: 52px; }
   .toggle { display: inline-flex; }
   .nav {
     display: none; position: absolute; top: calc(100% + 10px); left: 0; right: 0; margin: 0;
@@ -59,6 +61,7 @@
 }
 
 @media (max-width: 340px) {
-  .island { padding: 0 6px 0 12px; gap: 6px; }
+  .island { padding: 0 6px 0 8px; gap: 6px; }
+  .logo app-brand, .scrolled .logo app-brand { --logo-h: 44px; }
   .theme, .toggle { width: 36px; height: 36px; }
 }

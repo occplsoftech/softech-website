@@ -1,29 +1,20 @@
 import { Component, input } from '@angular/core';
 
-/** OCCPL SOFTECH logo mark (on a white tile so it reads on dark surfaces) + wordmark. */
+/** OCCPL SOFTECH logo: the full lockup (mark and name), or just the mark. */
 @Component({
   selector: 'app-brand',
   template: `
-    <img class="mark" src="logo-mark.png" alt="" width="40" height="40" />
-    @if (!markOnly()) {
-      <span class="word"><strong>OCCPL</strong><span>SOFTECH</span></span>
+    @if (markOnly()) {
+      <img class="mark" src="logo-mark.png" alt="" width="40" height="40" />
+    } @else {
+      <img class="lockup" src="logo-lockup.png" alt="OCCPL SOFTECH" width="157" height="60" />
     }
   `,
   styles: `
-    :host { display: inline-flex; align-items: center; gap: 10px; }
+    :host { display: inline-flex; align-items: center; --logo-h: 60px; }
     .mark { width: 40px; height: 40px; flex: none; border-radius: 12px; background: #fff; padding: 3px; object-fit: contain; }
-    .word { font: 800 1.25rem/1 var(--font-head); letter-spacing: 0.02em; color: inherit; display: inline-flex; gap: 5px; }
-    .word span { font-weight: 500; opacity: 0.72; }
-    strong { letter-spacing: 0.08em; }
-    @media (max-width: 420px) {
-      :host { gap: 8px; }
-      .mark { width: 34px; height: 34px; }
-      .word { font-size: 1rem; gap: 4px; }
-    }
-    @media (max-width: 340px) {
-      .mark { width: 30px; height: 30px; border-radius: 9px; }
-      .word { font-size: 0.875rem; }
-    }
+    /* The full logo has dark text, so it sits on a white tile to stay readable on the coloured header and footer. */
+    .lockup { height: var(--logo-h); width: auto; flex: none; border-radius: 14px; background: #fff; padding: 5px 12px; object-fit: contain; }
   `,
 })
 export class BrandMark {
