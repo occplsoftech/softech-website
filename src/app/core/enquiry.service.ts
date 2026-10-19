@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { ConfigService } from './config.service';
-import { EnquiryType } from './site.config';
+import { ENQUIRY_TYPES, EnquiryType } from './site.config';
 
 export interface EnquiryPayload {
   fullName: string;
@@ -24,7 +24,9 @@ export type SubmitResult =
 
 /**
  * Backend integration boundary. POSTs JSON to `enquiryEndpoint` from config.json and reports
- * success ONLY on a 2xx response. See README "Contact form" for the server-side contract.
+ * success ONLY on a 2xx response. The body follows the OCCPL platform's public lead intake
+ * (`POST /api/v1/public/leads`, see README "Contact form"); on the server, Caddy forwards
+ * `/api/leads` there, so the browser only ever talks to this site.
  */
 @Injectable({ providedIn: 'root' })
 export class EnquiryService {
@@ -37,12 +39,27 @@ export class EnquiryService {
       const res = await fetch(enquiryEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(toLead(payload)),
       });
       if (res.ok) return { ok: true };
-      return { ok: false, reason: res.status === 429 ? 'rate-limited' : 'rejected' };
+      if (res.status === 429) return { ok: false, reason: 'rate-limited' };
+      // 400/422: the platform refused the details. Anything else (404, 5xx, proxy errors) is our side.
+      return { ok: false, reason: res.status === 400 || res.status === 422 ? 'rejected' : 'network' };
     } catch {
       return { ok: false, reason: 'network' };
     }
   }
+}
+
+/** Maps the form onto the platform's public lead body. Optional fields are left out when empty. */
+function toLead(p: EnquiryPayload) {
+  const interest = ENQUIRY_TYPES.find((t) => t.value === p.enquiryType)?.label;
+  return {
+    companyName: p.company,
+    contactName: p.fullName,
+    email: p.email,
+    ...(p.phone ? { phone: p.phone } : {}),
+    ...(interest ? { productInterest: interest } : {}),
+    message: p.message,
+  };
 }

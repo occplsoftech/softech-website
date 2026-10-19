@@ -1,5 +1,5 @@
 {
-  "enquiryEndpoint": "",
+  "enquiryEndpoint": "/api/leads",
   "turnstileSiteKey": "",
   "contactEmail": "support@occplsoftech.com",
   "phone": "+91 97677 89780",

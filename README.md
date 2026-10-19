@@ -27,18 +27,28 @@ Set `SITE.product.brandName` when the product gets a final name.
 ## Contact form
 - Client validation, accessible labels/errors, loading / success / failure states.
 - Success is shown **only** after the endpoint returns 2xx. Unconfigured, offline, 4xx/5xx and 429 all show a failure message.
-- Spam strategy: hidden honeypot field, minimum-fill-time check, optional Turnstile, plus server-side rate limiting (required).
-- Consent checkbox links to /privacy; `consentAt` is sent with the lead.
+- Spam strategy: hidden honeypot field (`website`), minimum-fill-time check, and the platform's rate limit (5 per minute per IP).
+- Consent checkbox links to /privacy. The platform's public lead intake has no consent field, so the consent time is not stored with the lead.
 
-### Server contract
-`POST <enquiryEndpoint>` with `Content-Type: application/json`:
+### How enquiries reach the OCCPL platform
+The form posts to `/api/leads` on this site (`enquiryEndpoint` in `public/config.json`). Caddy on the server forwards that to the
+platform's public lead intake, `POST /api/v1/public/leads` (see `docs/LEADS_API.md` in the OCCPL repository). It needs no token, creates a
+`NEW` lead with source `Website` and emails the sender a confirmation. Body sent by `EnquiryService`:
 ```json
-{ "fullName": "", "company": "", "email": "", "phone": "", "enquiryType": "product-demo|custom-software|saas-development|integration|other",
-  "message": "", "consent": true, "consentAt": "ISO-8601", "source": "contact", "turnstileToken": "optional" }
+{ "companyName": "", "contactName": "", "email": "", "phone": "optional", "productInterest": "Product Demo", "message": "" }
 ```
-Return `2xx` only once the lead is stored/forwarded; `429` when rate limited; any other non-2xx is treated as failure.
-The server MUST re-validate every field, verify `turnstileToken` with Cloudflare's siteverify using the *secret* key (kept server-side), and allow CORS from the site origin.
-The backend in the courier repo (`/api/v1/leads`) is tied to the Amazing Logistics tenant and its own request shape, so it is **not** reused; either add an OCCPL SOFTECH endpoint or use a form provider (e.g. Formspree) that accepts JSON.
+`202` = received, `400` = invalid, `429` = more than 5 per minute from one IP.
+
+Caddy block (in the `www` site block of the platform's `Caddyfile`, before the static `file_server`):
+```
+@leads { path /api/leads
+         method POST }
+handle @leads {
+	request_body { max_size 20KB }
+	rewrite * /api/v1/public/leads
+	reverse_proxy core-platform:8080
+}
+```
 
 ## Deployment
 Fully static site: every route is prerendered to HTML (`/about/index.html`, etc.), so no server code and no SPA fallback are needed. Any static host works (S3/CloudFront, Netlify, Cloudflare Pages, nginx). Configure the host to serve `404.html` for missing paths.
