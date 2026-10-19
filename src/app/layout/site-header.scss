@@ -5,13 +5,13 @@
 .island {
   position: relative; display: flex; align-items: center; justify-content: space-between; gap: 20px;
   height: 64px; padding: 0 10px 0 22px; border-radius: 999px; color: #fff;
-  background: linear-gradient(180deg, rgb(255 255 255 / 9%), rgb(255 255 255 / 4%)), rgb(14 20 40 / 62%);
+  background: linear-gradient(180deg, rgb(255 255 255 / 9%), rgb(255 255 255 / 4%)), rgb(30 27 75 / 62%);
   border: 1px solid rgb(255 255 255 / 14%);
   box-shadow: 0 10px 40px -12px rgb(0 0 0 / 55%), inset 0 1px 0 rgb(255 255 255 / 10%);
   backdrop-filter: blur(18px) saturate(160%);
   transition: background 0.25s ease, height 0.25s ease, box-shadow 0.25s ease;
 }
-.scrolled .island { height: 58px; background: rgb(11 16 32 / 88%); box-shadow: 0 14px 44px -10px rgb(0 0 0 / 65%); }
+.scrolled .island { height: 58px; background: rgb(30 27 75 / 88%); box-shadow: 0 14px 44px -10px rgb(0 0 0 / 65%); }
 
 .logo { color: #fff; text-decoration: none; border-radius: 10px; }
 .nav { display: flex; align-items: center; flex: 1; justify-content: space-between; margin-left: 28px; }
@@ -43,7 +43,7 @@
   .nav {
     display: none; position: absolute; top: calc(100% + 10px); left: 0; right: 0; margin: 0;
     flex-direction: column; align-items: stretch; gap: 14px; padding: 14px;
-    background: rgb(11 16 32 / 96%); backdrop-filter: blur(18px); border: 1px solid rgb(255 255 255 / 14%);
+    background: rgb(30 27 75 / 96%); backdrop-filter: blur(18px); border: 1px solid rgb(255 255 255 / 14%);
     border-radius: 26px; box-shadow: 0 24px 60px -16px rgb(0 0 0 / 70%);
     &.open { display: flex; }
   }

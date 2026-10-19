@@ -33,11 +33,11 @@ export type MockupVariant = 'dashboard' | 'shipments' | 'loadsheet';
                 <div class="panel">
                   <div class="ph"><b>Shipments this week</b><span class="pill-s">7 days</span></div>
                   <svg class="area" viewBox="0 0 300 110" preserveAspectRatio="none">
-                    <defs><linearGradient id="mk-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3563F6" stop-opacity=".35" /><stop offset="1" stop-color="#3563F6" stop-opacity="0" /></linearGradient></defs>
+                    <defs><linearGradient id="mk-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E11D48" stop-opacity=".35" /><stop offset="1" stop-color="#E11D48" stop-opacity="0" /></linearGradient></defs>
                     <g stroke="#eef0f5"><path d="M0 28H300M0 56H300M0 84H300" /></g>
                     <path d="M0 88 C30 80 45 60 75 64 S120 86 150 52 S210 20 235 36 S280 14 300 8 V110 H0Z" fill="url(#mk-a)" />
-                    <path d="M0 88 C30 80 45 60 75 64 S120 86 150 52 S210 20 235 36 S280 14 300 8" fill="none" stroke="#3563F6" stroke-width="2.4" stroke-linecap="round" />
-                    <path d="M0 98 C40 92 70 84 110 88 S190 66 230 72 S280 58 300 52" fill="none" stroke="#6757E8" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round" />
+                    <path d="M0 88 C30 80 45 60 75 64 S120 86 150 52 S210 20 235 36 S280 14 300 8" fill="none" stroke="#E11D48" stroke-width="2.4" stroke-linecap="round" />
+                    <path d="M0 98 C40 92 70 84 110 88 S190 66 230 72 S280 58 300 52" fill="none" stroke="#312E81" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round" />
                   </svg>
                 </div>
                 <div class="panel">

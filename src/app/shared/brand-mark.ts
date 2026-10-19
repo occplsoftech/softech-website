@@ -7,8 +7,8 @@ import { Component, input } from '@angular/core';
     <svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
       <defs>
         <linearGradient [attr.id]="gid" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#3563F6" />
-          <stop offset="1" stop-color="#6757E8" />
+          <stop offset="0" stop-color="#E11D48" />
+          <stop offset="1" stop-color="#4F46E5" />
         </linearGradient>
       </defs>
       <rect width="32" height="32" rx="9" [attr.fill]="'url(#' + gid + ')'" />

@@ -6,16 +6,16 @@ label { display: block; font: 600 0.875rem var(--font-body); color: var(--ink); 
 .opt { font-weight: 400; color: var(--slate); }
 input:not([type='checkbox']), select, textarea {
   width: 100%; font: 400 1rem var(--font-body); color: var(--ink); background: #fff;
-  border: 1px solid #cfd5e1; border-radius: 12px; padding: 13px 15px; transition: border-color 0.15s, box-shadow 0.15s;
+  border: 1px solid #d1d5db; border-radius: 12px; padding: 13px 15px; transition: border-color 0.15s, box-shadow 0.15s;
   &:hover { border-color: #98a2b8; }
-  &:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px rgb(53 99 246 / 18%); }
+  &:focus { outline: none; border-color: var(--crimson); box-shadow: 0 0 0 4px rgb(225 29 72 / 18%); }
   &[aria-invalid='true'] { border-color: var(--danger); }
   &::placeholder { color: #98a2b3; }
 }
 textarea { resize: vertical; min-height: 130px; }
 .err { color: var(--danger); font-size: 0.875rem; margin: 8px 0 0; }
 .check { display: flex; gap: 12px; align-items: flex-start; font-weight: 400; color: var(--slate); line-height: 1.5; margin: 0;
-  input { width: 20px; height: 20px; margin: 2px 0 0; flex: none; accent-color: var(--blue); } }
+  input { width: 20px; height: 20px; margin: 2px 0 0; flex: none; accent-color: var(--crimson); } }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .turnstile { margin-bottom: 20px; }
 .alert { background: #fef3f2; border: 1px solid #fecdca; color: var(--danger); border-radius: 12px; padding: 14px 16px; margin-bottom: 20px; font-size: 0.9375rem; }

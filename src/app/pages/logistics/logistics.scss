@@ -8,7 +8,7 @@
 .faqs details { background: #fff; border: 1px solid var(--line); border-radius: 14px; margin-bottom: 12px; padding: 0 22px;
   summary { cursor: pointer; padding: 20px 0; font: 600 1.05rem var(--font-head); color: var(--ink); list-style: none; display: flex; justify-content: space-between; gap: 16px;
     &::-webkit-details-marker { display: none; }
-    &::after { content: '+'; font-size: 1.4rem; line-height: 1; color: var(--blue); transition: transform 0.2s; } }
+    &::after { content: '+'; font-size: 1.4rem; line-height: 1; color: var(--crimson); transition: transform 0.2s; } }
   &[open] summary::after { transform: rotate(45deg); }
   p { padding-bottom: 20px; margin: 0; } }
 .demo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
