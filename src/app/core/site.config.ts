@@ -5,7 +5,7 @@
  */
 export const SITE = {
   name: 'OCCPL SOFTECH',
-  url: 'https://occplsoftech.com',
+  url: 'https://www.occplsoftech.com',
   tagline: 'Software solutions for a smarter tomorrow',
   /** Descriptive product name. Swap `brandName` once a final name is chosen. */
   product: {

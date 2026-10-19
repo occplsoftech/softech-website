@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://occplsoftech.com/sitemap.xml
+Sitemap: https://www.occplsoftech.com/sitemap.xml

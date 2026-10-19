@@ -46,7 +46,7 @@ Fully static site: every route is prerendered to HTML (`/about/index.html`, etc.
 - EC2 (automatic): `.github/workflows/deploy.yml` builds on every push to `main` and rsyncs `dist/softech-website/browser` to `/opt/occpl/site/` on the server, where Caddy serves it. Needs repo secrets `EC2_HOST`, `EC2_USER`, `EC2_SSH_KEY` and `EC2_KNOWN_HOSTS`.
 - GitHub Pages (manual alternative): run `.github/workflows/deploy-pages.yml` from the Actions tab after setting **Settings → Pages → Source: GitHub Actions**.
 - Otherwise upload the contents of `dist/softech-website/browser`.
-- Domain: canonical/sitemap/OG URLs assume `https://occplsoftech.com` (`SITE.url`, `src/index.html`, `public/sitemap.xml`, `public/robots.txt`). Change all of them if different; point DNS at the host and enable HTTPS.
+- Domain: canonical/sitemap/OG URLs assume `https://www.occplsoftech.com` (`SITE.url`, `src/index.html`, `public/sitemap.xml`, `public/robots.txt`). Change all of them if different; point DNS at the host and enable HTTPS.
 
 ## Updating content
 - Logistics page copy, features, FAQs, screenshots: `src/app/pages/logistics/logistics.content.ts`. Set `src` on a screen to swap a mockup for a real image in `public/images/`.
