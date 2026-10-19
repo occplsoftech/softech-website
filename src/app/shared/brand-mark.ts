@@ -13,8 +13,8 @@ import { Component, input } from '@angular/core';
   styles: `
     :host { display: inline-flex; align-items: center; --logo-h: 60px; }
     .mark { width: 40px; height: 40px; flex: none; border-radius: 12px; background: #fff; padding: 3px; object-fit: contain; }
-    /* The full logo has dark text, so it sits on a white tile to stay readable on the coloured header and footer. */
-    .lockup { height: var(--logo-h); width: auto; flex: none; border-radius: 14px; background: #fff; padding: 5px 12px; object-fit: contain; }
+    /* The full logo has dark text: on dark surfaces (dark-theme header, footer) it sits on a white tile; the light header sets --hd-logo-bg to transparent. */
+    .lockup { height: var(--logo-h); width: auto; flex: none; border-radius: 14px; background: var(--hd-logo-bg, #fff); padding: var(--hd-logo-pad, 5px 12px); object-fit: contain; }
   `,
 })
 export class BrandMark {
