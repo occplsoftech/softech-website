@@ -39,16 +39,10 @@ platform's public lead intake, `POST /api/v1/public/leads` (see `docs/LEADS_API.
 ```
 `202` = received, `400` = invalid, `429` = more than 5 per minute from one IP.
 
-Caddy block (in the `www` site block of the platform's `Caddyfile`, before the static `file_server`):
-```
-@leads { path /api/leads
-         method POST }
-handle @leads {
-	request_body { max_size 20KB }
-	rewrite * /api/v1/public/leads
-	reverse_proxy core-platform:8080
-}
-```
+The Caddy config for the site, including this forwarding rule, is `deploy/website.caddy`. On the server it lives at
+`/opt/occpl/extra/website.caddy` and is imported by the platform's `Caddyfile` (`import /etc/caddy/extra/*.caddy`; the platform's
+`docker-compose.yml` mounts `./extra` and `./site`). The platform deploy overwrites its own `Caddyfile` and `docker-compose.yml`, so
+those import and mount lines must stay in the platform repo too.
 
 ## Deployment
 Fully static site: every route is prerendered to HTML (`/about/index.html`, etc.), so no server code and no SPA fallback are needed. Any static host works (S3/CloudFront, Netlify, Cloudflare Pages, nginx). Configure the host to serve `404.html` for missing paths.

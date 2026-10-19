@@ -1,0 +1,32 @@
+# Caddy config for www.occplsoftech.com. Lives on the server as /opt/occpl/extra/website.caddy and is
+# pulled into the OCCPL platform's Caddyfile with:  import /etc/caddy/extra/*.caddy
+# (the platform's docker-compose.yml mounts ./extra to /etc/caddy/extra and ./site to /srv/site).
+# The platform deploy overwrites its own Caddyfile and docker-compose.yml, but not the extra/ folder.
+www.occplsoftech.com {
+	encode zstd gzip
+	@leads {
+		path /api/leads
+		method POST
+	}
+	handle @leads {
+		request_body {
+			max_size 20KB
+		}
+		rewrite * /api/v1/public/leads
+		reverse_proxy core-platform:8080
+	}
+	handle {
+		root * /srv/site
+		file_server
+	}
+	handle_errors {
+		rewrite * /404.html
+		root * /srv/site
+		file_server
+	}
+}
+
+# Bare domain redirects to www
+occplsoftech.com {
+	redir https://www.occplsoftech.com{uri} permanent
+}
