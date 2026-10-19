@@ -10,9 +10,9 @@
   --alert-bg: #fef3f2;
   --alert-line: #fecdca;
   --ok-bg: #d1fadf;
-  --navy: #312E81;
-  --navy-2: #28256b;
-  --navy-3: #1e1b4b;
+  --navy: #BE123C;
+  --navy-2: #9F1239;
+  --navy-3: #881337;
   --crimson: #E11D48;
   --indigo: #4F46E5;
   --cloud: #F3F4F6;
@@ -34,7 +34,7 @@
   --r-lg: 22px;
   --shadow-sm: 0 1px 2px rgb(16 24 40 / 6%);
   --shadow-md: 0 10px 30px -12px rgb(16 24 40 / 18%);
-  --shadow-lg: 0 30px 60px -20px rgb(30 27 75 / 45%);
+  --shadow-lg: 0 30px 60px -20px rgb(76 5 25 / 45%);
 
   --container: 1180px;
   --gutter: clamp(20px, 4vw, 40px);
@@ -45,15 +45,15 @@
 /* Dark theme: follows the system setting unless the visitor picked one with the header toggle. */
 @mixin dark-tokens {
   color-scheme: dark;
-  --bg: #0f0e2e;
-  --surface: #1a1848;
-  --cloud: #151338;
-  --muted-bg: #24215a;
-  --border-strong: #3a3778;
-  --slate: #a3a7d8;
-  --body: #c3c6e4;
-  --ink: #f4f4fb;
-  --line: #2c2a63;
+  --bg: #14060c;
+  --surface: #230f19;
+  --cloud: #1b0a12;
+  --muted-bg: #33182a;
+  --border-strong: #4d2536;
+  --slate: #c9a0ab;
+  --body: #ecd3d9;
+  --ink: #fff1f2;
+  --line: #3a1a27;
   --link: #fb7185;
   --card-hover-line: #E11D48;
   --danger: #fb7185;
@@ -106,7 +106,7 @@ ul { padding: 0; margin: 0; list-style: none; }
   outline-offset: 3px;
   border-radius: 4px;
 }
-.on-dark :focus-visible, .dark :focus-visible { outline-color: #fda4af; }
+.on-dark :focus-visible, .dark :focus-visible { outline-color: #fff; }
 
 .skip-link {
   position: absolute; left: 12px; top: -60px; z-index: 100;
@@ -125,7 +125,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 .container--narrow { max-width: calc(780px + var(--gutter) * 2); }
 .section { padding-block: var(--section-y); }
 .section--cloud { background: var(--cloud); }
-.section--dark { background: var(--navy); color: #d0d2f0; h2, h3 { color: var(--white); } }
+.section--dark { background: var(--navy); color: #ffe4e6; h2, h3 { color: var(--white); } }
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
@@ -134,13 +134,14 @@ ul { padding: 0; margin: 0; list-style: none; }
   margin-bottom: 18px;
   &::before { content: ''; width: 22px; height: 2px; background: var(--grad); border-radius: 2px; }
 }
-.dark .eyebrow, .section--dark .eyebrow { color: #fda4af; }
+.dark .eyebrow, .section--dark .eyebrow { color: #ffe4e6; }
+.dark .eyebrow::before, .on-dark .eyebrow::before { background: #ffe4e6; }
 
 .h-display { font-size: clamp(2.6rem, 6.4vw, 5.4rem); font-weight: 800; letter-spacing: -0.045em; line-height: 1.02; }
 .h-section { font-size: clamp(2.1rem, 4.4vw, 3.5rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; }
 .lead { font-size: clamp(1.125rem, 1.6vw, 1.35rem); line-height: 1.6; max-width: 60ch; }
 .text-grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.dark .text-grad { background-image: linear-gradient(110deg, #fb7185, #fecdd3 40%, #fb7185 80%); background-size: 200% 100%; animation: sheen 6s ease-in-out infinite alternate; }
+.dark .text-grad { background-image: linear-gradient(110deg, #c7d2fe, #ffffff 40%, #c7d2fe 80%); background-size: 200% 100%; animation: sheen 6s ease-in-out infinite alternate; }
 @keyframes sheen { to { background-position: 100% 0; } }
 
 .grid { display: grid; gap: 24px; }
@@ -160,6 +161,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 }
 .btn--primary { position: relative; overflow: hidden; background: var(--grad); color: #fff; box-shadow: 0 8px 24px -8px rgb(225 29 72 / 70%);
   &:hover { box-shadow: 0 12px 28px -8px rgb(225 29 72 / 80%); } }
+.dark .btn--primary, .on-dark .btn--primary { background: #fff; color: var(--navy); box-shadow: 0 10px 28px -10px rgb(0 0 0 / 45%); }
 .btn--secondary { background: transparent; color: var(--ink); border-color: var(--border-strong);
   &:hover { border-color: var(--crimson); color: var(--crimson); } }
 .dark .btn--secondary { color: #fff; border-color: rgb(255 255 255 / 28%);
@@ -210,8 +212,8 @@ a.card, .card--hover { text-decoration: none; color: inherit; display: block;
 /* ───────── Depth helpers ───────── */
 .glow-bg {
   background:
-    radial-gradient(60% 75% at 85% 0%, rgb(225 29 72 / 46%), transparent 62%),
-    radial-gradient(55% 70% at 0% 100%, rgb(225 29 72 / 40%), transparent 62%),
+    radial-gradient(60% 75% at 85% 0%, rgb(49 46 129 / 60%), transparent 62%),
+    radial-gradient(55% 70% at 0% 100%, rgb(76 5 25 / 55%), transparent 62%),
     linear-gradient(rgb(255 255 255 / 3.5%) 1px, transparent 1px) 0 0 / 56px 56px,
     linear-gradient(90deg, rgb(255 255 255 / 3.5%) 1px, transparent 1px) 0 0 / 56px 56px,
     var(--navy);

@@ -49,8 +49,8 @@ import { Icon } from '../shared/icon';
     </footer>
   `,
   styles: `
-    .foot { position: relative; overflow: hidden; background: var(--navy); color: #b9bce6; padding-top: 80px;
-      background: radial-gradient(60% 55% at 80% 0%, rgb(225 29 72 / 34%), transparent 70%), var(--navy); }
+    .foot { position: relative; overflow: hidden; background: var(--navy); color: #fecdd3; padding-top: 80px;
+      background: radial-gradient(60% 55% at 80% 0%, rgb(49 46 129 / 55%), transparent 70%), var(--navy); }
     .foot::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, #818cf8, #E11D48, transparent); }
     .lead-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-bottom: 56px; margin-bottom: 56px; border-bottom: 1px solid var(--line-dark); }
     .lead-row h2 { color: #fff; font-size: clamp(2rem, 4.4vw, 3.4rem); margin: 0; letter-spacing: -0.04em; }
@@ -58,10 +58,10 @@ import { Icon } from '../shared/icon';
     app-brand { color: #fff; }
     .tag-line { color: #fff; font: 700 1.05rem var(--font-head); margin: 18px 0 6px; }
     .blurb { max-width: 36ch; margin: 0; }
-    .contact { margin-top: 18px; font-size: 0.9375rem; --contact-link: #fda4af; }
+    .contact { margin-top: 18px; font-size: 0.9375rem; --contact-link: #fff; }
     h3 { font: 600 0.8125rem var(--font-body); letter-spacing: 0.1em; text-transform: uppercase; color: #fff; margin-bottom: 16px; }
     li { margin-bottom: 10px; }
-    a:not(.btn) { color: #b9bce6; text-decoration: none; transition: color 0.15s; &:hover { color: #fff; } }
+    a:not(.btn) { color: #fecdd3; text-decoration: none; transition: color 0.15s; &:hover { color: #fff; } }
     .bottom { position: relative; z-index: 1; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-block: 24px; border-top: 1px solid var(--line-dark); }
     .legal { display: flex; gap: 20px; li { margin: 0; } }
     .ghost { font: 800 clamp(5rem, 20vw, 18rem)/0.78 var(--font-head); letter-spacing: -0.06em; text-align: center; margin-top: -10px; padding-bottom: 0; color: transparent; -webkit-text-stroke: 1px rgb(255 255 255 / 9%); user-select: none; transform: translateY(18%); }

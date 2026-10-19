@@ -8,20 +8,20 @@ interface Node { x: number; y: number; hub?: boolean }
   template: `
     <svg viewBox="0 0 800 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
       <defs>
-        <radialGradient [attr.id]="id + 'h'"><stop offset="0" stop-color="#fda4af" /><stop offset="1" stop-color="#E11D48" /></radialGradient>
-        <linearGradient [attr.id]="id + 'l'" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E11D48" stop-opacity=".1" /><stop offset=".5" stop-color="#fda4af" stop-opacity=".7" /><stop offset="1" stop-color="#818cf8" stop-opacity=".1" /></linearGradient>
+        <radialGradient [attr.id]="id + 'h'"><stop offset="0" stop-color="#ffe4e6" /><stop offset="1" stop-color="#fb7185" /></radialGradient>
+        <linearGradient [attr.id]="id + 'l'" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E11D48" stop-opacity=".1" /><stop offset=".5" stop-color="#ffe4e6" stop-opacity=".7" /><stop offset="1" stop-color="#818cf8" stop-opacity=".1" /></linearGradient>
       </defs>
       @for (e of edges; track $index) {
-        <path [attr.id]="id + 'e' + $index" [attr.d]="e" fill="none" stroke="rgb(165 180 252 / 18%)" stroke-width="1.2" />
+        <path [attr.id]="id + 'e' + $index" [attr.d]="e" fill="none" stroke="rgb(255 228 230 / 18%)" stroke-width="1.2" />
         <path class="anim flow" [attr.d]="e" fill="none" [attr.stroke]="'url(#' + id + 'l)'" stroke-width="1.8" stroke-dasharray="6 14" [style.animation-delay.s]="$index * -0.7" />
       }
       @for (n of nodes; track $index) {
         @if (n.hub) {
-          <circle class="anim pulse" [attr.cx]="n.x" [attr.cy]="n.y" r="9" fill="none" stroke="#fda4af" stroke-width="1.2" />
+          <circle class="anim pulse" [attr.cx]="n.x" [attr.cy]="n.y" r="9" fill="none" stroke="#ffe4e6" stroke-width="1.2" />
           <circle [attr.cx]="n.x" [attr.cy]="n.y" r="13" [attr.fill]="'url(#' + id + 'h)'" opacity=".95" />
           <circle [attr.cx]="n.x" [attr.cy]="n.y" r="4.5" fill="#fff" />
         } @else {
-          <circle [attr.cx]="n.x" [attr.cy]="n.y" r="4.5" fill="#312E81" stroke="#fda4af" stroke-width="1.6" />
+          <circle [attr.cx]="n.x" [attr.cy]="n.y" r="4.5" fill="#881337" stroke="#ffe4e6" stroke-width="1.6" />
         }
       }
       @for (i of parcels; track i) {
