@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SITE } from '../core/site.config';
 import { BrandMark } from '../shared/brand-mark';
+import { ContactDetails } from '../shared/contact-details';
 import { Icon } from '../shared/icon';
 
 @Component({
   selector: 'app-site-footer',
-  imports: [RouterLink, BrandMark, Icon],
+  imports: [RouterLink, BrandMark, Icon, ContactDetails],
   template: `
     <footer class="foot on-dark">
       <div class="container">
@@ -20,6 +21,7 @@ import { Icon } from '../shared/icon';
             <app-brand />
             <p class="tag-line">{{ tagline }}</p>
             <p class="blurb">Practical, scalable software products and custom business solutions.</p>
+            <app-contact-details class="contact" />
           </div>
           <nav aria-label="Company">
             <h3>Company</h3>
@@ -56,6 +58,7 @@ import { Icon } from '../shared/icon';
     app-brand { color: #fff; }
     .tag-line { color: #fff; font: 700 1.05rem var(--font-head); margin: 18px 0 6px; }
     .blurb { max-width: 36ch; margin: 0; }
+    .contact { margin-top: 18px; font-size: 0.9375rem; --contact-link: #fda4af; }
     h3 { font: 600 0.8125rem var(--font-body); letter-spacing: 0.1em; text-transform: uppercase; color: #fff; margin-bottom: 16px; }
     li { margin-bottom: 10px; }
     a:not(.btn) { color: #b9bce6; text-decoration: none; transition: color 0.15s; &:hover { color: #fff; } }

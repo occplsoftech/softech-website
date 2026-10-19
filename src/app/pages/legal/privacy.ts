@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SITE } from '../../core/site.config';
+import { ContactDetails } from '../../shared/contact-details';
 import { PageHero } from '../../shared/page-hero';
 
 @Component({
   selector: 'app-privacy',
-  imports: [RouterLink, PageHero],
+  imports: [RouterLink, PageHero, ContactDetails],
   template: `
     <app-page-hero eyebrow="Legal" title="Privacy Policy" [lead]="'Last updated: ' + updated" />
     <section class="section">
@@ -40,6 +41,10 @@ import { PageHero } from '../../shared/page-hero';
 
         <h2>Your rights</h2>
         <p>Under applicable data protection law, including India's Digital Personal Data Protection Act, 2023, you may have the right to access, correct or erase your personal information and to withdraw consent. To make a request, <a routerLink="/contact">contact us</a> and mention that it concerns privacy.</p>
+
+        <h2>Who we are and how to reach us</h2>
+        <app-contact-details />
+        <p>You can also <a routerLink="/contact">send us a message</a> through the enquiry form.</p>
 
         <h2>Changes</h2>
         <p>We may update this policy and will change the date above when we do.</p>

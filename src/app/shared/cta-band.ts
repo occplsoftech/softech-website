@@ -18,6 +18,7 @@ import { RouterLink } from '@angular/router';
     </section>
   `,
   styles: `
+    .section { padding-top: 0; }
     .band {
       display: flex; gap: 32px; align-items: center; justify-content: space-between; flex-wrap: wrap;
       padding: clamp(32px, 5vw, 56px); border-radius: var(--r-lg); color: #d0d2f0;

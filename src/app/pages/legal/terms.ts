@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SITE } from '../../core/site.config';
+import { ContactDetails } from '../../shared/contact-details';
 import { PageHero } from '../../shared/page-hero';
 
 @Component({
   selector: 'app-terms',
-  imports: [RouterLink, PageHero],
+  imports: [RouterLink, PageHero, ContactDetails],
   template: `
     <app-page-hero eyebrow="Legal" title="Terms of Use" [lead]="'Last updated: ' + updated" />
     <section class="section">
@@ -41,6 +42,7 @@ import { PageHero } from '../../shared/page-hero';
 
         <h2>Changes and contact</h2>
         <p>We may update these terms and will change the date above when we do. Questions? <a routerLink="/contact">Contact us</a>.</p>
+        <app-contact-details />
       </div>
     </section>
   `,

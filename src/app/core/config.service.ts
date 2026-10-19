@@ -5,11 +5,17 @@ export interface RuntimeConfig {
   enquiryEndpoint: string;
   /** Cloudflare Turnstile PUBLIC site key. Empty = widget disabled. */
   turnstileSiteKey: string;
-  /** Optional public contact address shown on the contact page. */
+  /** Optional public contact address shown on the contact page, footer and legal pages. */
   contactEmail: string;
+  /** Optional public phone number. */
+  phone: string;
+  /** Optional postal address (use commas for line breaks). */
+  address: string;
+  /** Registered company name for the legal pages, e.g. "OCCPL SOFTECH Private Limited". */
+  legalName: string;
 }
 
-const DEFAULTS: RuntimeConfig = { enquiryEndpoint: '', turnstileSiteKey: '', contactEmail: '' };
+const DEFAULTS: RuntimeConfig = { enquiryEndpoint: '', turnstileSiteKey: '', contactEmail: '', phone: '', address: '', legalName: '' };
 
 /** Loads `config.json` once (served from `public/`) so deploys can change it without a rebuild. */
 @Injectable({ providedIn: 'root' })

@@ -1,5 +1,8 @@
 {
   "enquiryEndpoint": "",
   "turnstileSiteKey": "",
-  "contactEmail": ""
+  "contactEmail": "",
+  "phone": "",
+  "address": "",
+  "legalName": ""
 }

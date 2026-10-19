@@ -6,7 +6,7 @@
 export const SITE = {
   name: 'OCCPL SOFTECH',
   url: 'https://skra.in',
-  tagline: 'Build. Automate. Scale.',
+  tagline: 'Software solutions for a smarter tomorrow',
   /** Descriptive product name. Swap `brandName` once a final name is chosen. */
   product: {
     descriptiveName: 'Courier & Logistics Management Software',
