@@ -55,7 +55,7 @@ import { Icon } from '../shared/icon';
     .lead-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-bottom: 56px; margin-bottom: 56px; border-bottom: 1px solid var(--line-dark); }
     .lead-row h2 { color: #fff; font-size: clamp(2rem, 4.4vw, 3.4rem); margin: 0; letter-spacing: -0.04em; }
     .top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 56px; }
-    app-brand { --logo-h: 72px; }
+    app-brand { --logo-h: 72px; margin-left: -6px; }
     .tag-line { color: #fff; font: 700 1.05rem var(--font-head); margin: 18px 0 6px; }
     .blurb { max-width: 36ch; margin: 0; }
     .contact { margin-top: 18px; font-size: 0.9375rem; --contact-link: #fff; }

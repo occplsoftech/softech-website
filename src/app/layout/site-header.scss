@@ -1,5 +1,5 @@
 /* Floating island header. Zero layout height: page heroes slide underneath it.
-   Light theme: a white bar, so the full logo (dark text) shows as it is. Dark theme: an indigo bar with the logo on a white tile. */
+   Light theme: a white bar with the full-colour logo. Dark theme: an indigo bar with the light (white and pink) logo. */
 :host {
   display: block; position: sticky; top: 0; z-index: 50; height: 0;
   --hd-bg: rgb(255 255 255 / 94%); --hd-bg-scrolled: rgb(255 255 255 / 98%);
@@ -9,7 +9,7 @@
   --hd-btn-bg: rgb(49 46 129 / 8%); --hd-btn-border: rgb(30 27 75 / 12%);
   --hd-cta-bg: var(--grad); --hd-cta-text: #fff; --hd-cta-shadow: 0 8px 22px -8px rgb(225 29 72 / 60%);
   --hd-arrow-bg: #fff; --hd-arrow-text: #e11d48;
-  --hd-logo-bg: transparent; --hd-logo-pad: 0 6px;
+  --logo-color-display: inline-block; --logo-light-display: none;
   --hd-panel: #fff;
 }
 @mixin header-dark {
@@ -21,7 +21,7 @@
   --hd-btn-bg: rgb(255 255 255 / 8%); --hd-btn-border: rgb(255 255 255 / 14%);
   --hd-cta-bg: #fff; --hd-cta-text: #1e1b4b; --hd-cta-shadow: 0 6px 20px -6px rgb(255 255 255 / 35%);
   --hd-arrow-bg: var(--grad); --hd-arrow-text: #fff;
-  --hd-logo-bg: #fff; --hd-logo-pad: 5px 12px;
+  --logo-color-display: none; --logo-light-display: inline-block;
   --hd-panel: rgb(38 35 105 / 97%);
 }
 :host-context(:root[data-theme='dark']) { @include header-dark; }
