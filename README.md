@@ -1,4 +1,4 @@
-# SKRA Tech website
+# OCCPL SOFTECH website
 
 Angular 22, prerendered to static HTML (standalone components, Reactive Forms, lazy routes, SCSS). No runtime dependencies beyond Angular.
 
@@ -38,11 +38,11 @@ Set `SITE.product.brandName` when the product gets a final name.
 ```
 Return `2xx` only once the lead is stored/forwarded; `429` when rate limited; any other non-2xx is treated as failure.
 The server MUST re-validate every field, verify `turnstileToken` with Cloudflare's siteverify using the *secret* key (kept server-side), and allow CORS from the site origin.
-The backend in the courier repo (`/api/v1/leads`) is tied to the Amazing Logistics tenant and its own request shape, so it is **not** reused; either add a SKRA endpoint or use a form provider (e.g. Formspree) that accepts JSON.
+The backend in the courier repo (`/api/v1/leads`) is tied to the Amazing Logistics tenant and its own request shape, so it is **not** reused; either add an OCCPL SOFTECH endpoint or use a form provider (e.g. Formspree) that accepts JSON.
 
 ## Deployment
 Fully static site: every route is prerendered to HTML (`/about/index.html`, etc.), so no server code and no SPA fallback are needed. Any static host works (S3/CloudFront, Netlify, Cloudflare Pages, nginx). Configure the host to serve `404.html` for missing paths.
-- Docker: `docker build -t skra-site . && docker run -p 8080:80 skra-site` (nginx.conf included, SPA fallback + caching).
+- Docker: `docker build -t softech-site . && docker run -p 8080:80 softech-site` (nginx.conf included, SPA fallback + caching).
 - Otherwise upload the contents of `dist/softech-website/browser`.
 - Domain: canonical/sitemap/OG URLs assume `https://skra.in` (`SITE.url`, `public/sitemap.xml`, `public/robots.txt`). Change all three if different; point DNS at the host and enable HTTPS.
 

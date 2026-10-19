@@ -10,7 +10,7 @@ import { PageHero } from '../../shared/page-hero';
     <app-page-hero eyebrow="Legal" title="Privacy Policy" [lead]="'Last updated: ' + updated" />
     <section class="section">
       <div class="container container--narrow prose">
-        <p>This policy explains how SKRA Tech ("we", "us") handles personal information collected through this website.</p>
+        <p>This policy explains how OCCPL SOFTECH ("we", "us") handles personal information collected through this website.</p>
 
         <h2>Information we collect</h2>
         <p>When you submit the enquiry form we collect the details you provide: your name, company name, work email address, optional phone number, enquiry type and the message you write. We also record the page you submitted the form from and the time you gave consent.</p>

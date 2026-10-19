@@ -9,9 +9,9 @@ export const routes: Routes = [
     pathMatch: 'full',
     loadComponent: () => import('./pages/home/home').then((m) => m.HomePage),
     data: seo({
-      title: 'SKRA Tech | Software Products & Custom Business Solutions',
+      title: 'OCCPL SOFTECH | Software Products & Custom Business Solutions',
       description:
-        'SKRA Tech builds practical, scalable software products and custom business solutions, including courier and logistics management software, SaaS applications and business automation.',
+        'OCCPL SOFTECH builds practical, scalable software products and custom business solutions, including courier and logistics management software, SaaS applications and business automation.',
     }),
   },
   {
@@ -20,7 +20,7 @@ export const routes: Routes = [
     data: seo({
       title: 'Software Products',
       description:
-        'Software products from SKRA Tech, starting with courier and logistics management software built around how logistics companies actually work.',
+        'Software products from OCCPL SOFTECH, starting with courier and logistics management software built around how logistics companies actually work.',
     }),
   },
   {
@@ -38,7 +38,7 @@ export const routes: Routes = [
     data: seo({
       title: 'Solutions',
       description:
-        'Custom software development, SaaS product development, business process automation, API integrations and system modernization from SKRA Tech.',
+        'Custom software development, SaaS product development, business process automation, API integrations and system modernization from OCCPL SOFTECH.',
     }),
   },
   {
@@ -47,7 +47,7 @@ export const routes: Routes = [
     data: seo({
       title: 'About',
       description:
-        'SKRA Tech is an engineering-led software product and custom development company. Learn how we work and what we are building.',
+        'OCCPL SOFTECH is an engineering-led software product and custom development company. Learn how we work and what we are building.',
     }),
   },
   {
@@ -56,18 +56,18 @@ export const routes: Routes = [
     data: seo({
       title: 'Contact',
       description:
-        'Tell SKRA Tech about your operational challenges or software requirements, or request a product demo.',
+        'Tell OCCPL SOFTECH about your operational challenges or software requirements, or request a product demo.',
     }),
   },
   {
     path: 'privacy',
     loadComponent: () => import('./pages/legal/privacy').then((m) => m.PrivacyPage),
-    data: seo({ title: 'Privacy Policy', description: 'How SKRA Tech collects, uses and protects personal information submitted through this website.' }),
+    data: seo({ title: 'Privacy Policy', description: 'How OCCPL SOFTECH collects, uses and protects personal information submitted through this website.' }),
   },
   {
     path: 'terms',
     loadComponent: () => import('./pages/legal/terms').then((m) => m.TermsPage),
-    data: seo({ title: 'Terms of Use', description: 'Terms governing use of the SKRA Tech website.' }),
+    data: seo({ title: 'Terms of Use', description: 'Terms governing use of the OCCPL SOFTECH website.' }),
   },
   {
     path: '**',

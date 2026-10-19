@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 
-/** Geometric SKRA mark (two stacked ascending chevrons) + wordmark. */
+/** Geometric OCCPL SOFTECH mark (two stacked ascending chevrons) + wordmark. */
 @Component({
   selector: 'app-brand',
   template: `
@@ -16,7 +16,7 @@ import { Component, input } from '@angular/core';
       <path d="M9 14l7-7 7 7" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
     @if (!markOnly()) {
-      <span class="word"><strong>SKRA</strong><span>Tech</span></span>
+      <span class="word"><strong>OCCPL</strong><span>SOFTECH</span></span>
     }
   `,
   styles: `
@@ -30,5 +30,5 @@ import { Component, input } from '@angular/core';
 export class BrandMark {
   readonly markOnly = input(false);
   private static n = 0;
-  protected readonly gid = `skra-g-${BrandMark.n++}`;
+  protected readonly gid = `occpl-g-${BrandMark.n++}`;
 }

@@ -62,6 +62,6 @@ export const LOGISTICS = {
     { q: 'Can it be adapted to our way of working?', a: 'Every operation is different. In a demo and discovery conversation we look at your workflow and tell you honestly what fits as it is and what would need customisation.' },
     { q: 'How is it priced and deployed?', a: 'This depends on your size and requirements, so we discuss it directly. Request a demo and we will go through the options with you.' },
     { q: 'Can we see it before deciding?', a: 'Yes. Send a demo request and we will arrange a walkthrough.' },
-    { q: 'Can SKRA Tech build something beyond the product?', a: 'Yes. We also build custom software, integrations and automation. See our solutions page.' },
+    { q: 'Can OCCPL SOFTECH build something beyond the product?', a: 'Yes. We also build custom software, integrations and automation. See our solutions page.' },
   ],
 };

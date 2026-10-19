@@ -13,7 +13,7 @@ import { PageHero } from '../../shared/page-hero';
         <p>By using this website you agree to these terms. If you do not agree, please do not use the site.</p>
 
         <h2>About this website</h2>
-        <p>This website provides general information about SKRA Tech and its software products and services. Nothing on it is an offer or a binding commitment. Any project or product supply is governed by a separate written agreement.</p>
+        <p>This website provides general information about OCCPL SOFTECH and its software products and services. Nothing on it is an offer or a binding commitment. Any project or product supply is governed by a separate written agreement.</p>
 
         <h2>Product information and mockups</h2>
         <p>Interface images on this website are illustrations and are labelled as such. Product descriptions may change as the software evolves. Please confirm current capabilities with us before relying on them.</p>
@@ -25,13 +25,13 @@ import { PageHero } from '../../shared/page-hero';
         </ul>
 
         <h2>Intellectual property</h2>
-        <p>The SKRA Tech name, logo, design and content on this website belong to SKRA Tech or its licensors. You may not copy or reuse them without permission.</p>
+        <p>The OCCPL SOFTECH name, logo, design and content on this website belong to OCCPL SOFTECH or its licensors. You may not copy or reuse them without permission.</p>
 
         <h2>Enquiries and privacy</h2>
         <p>Information you submit is handled as described in our <a routerLink="/privacy">Privacy Policy</a>.</p>
 
         <h2>Disclaimer and liability</h2>
-        <p>The website is provided "as is" without warranties of any kind. To the extent permitted by law, SKRA Tech is not liable for losses arising from your use of the website or reliance on its content.</p>
+        <p>The website is provided "as is" without warranties of any kind. To the extent permitted by law, OCCPL SOFTECH is not liable for losses arising from your use of the website or reliance on its content.</p>
 
         <h2>Third-party links</h2>
         <p>The website may link to third-party sites. We are not responsible for their content or practices.</p>

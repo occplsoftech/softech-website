@@ -4,7 +4,7 @@
  * `public/config.json` so it can change without a rebuild.
  */
 export const SITE = {
-  name: 'SKRA Tech',
+  name: 'OCCPL SOFTECH',
   url: 'https://skra.in',
   tagline: 'Build. Automate. Scale.',
   /** Descriptive product name. Swap `brandName` once a final name is chosen. */

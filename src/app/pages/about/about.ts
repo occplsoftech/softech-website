@@ -10,7 +10,7 @@ import { SectionHeading } from '../../shared/section-heading';
   selector: 'app-about',
   imports: [RouterLink, PageHero, SectionHeading, Icon, CtaBand, ...EFFECTS],
   template: `
-    <app-page-hero eyebrow="About" title="Engineering-led software, built for business." lead="SKRA Tech builds software products and custom business solutions. We are a small development team focused on practical results." />
+    <app-page-hero eyebrow="About" title="Engineering-led software, built for business." lead="OCCPL SOFTECH builds software products and custom business solutions. We are a small development team focused on practical results." />
 
     <section class="section">
       <div class="container two">
@@ -19,7 +19,7 @@ import { SectionHeading } from '../../shared/section-heading';
           <h2 class="h-section">A product company that also builds for clients.</h2>
         </div>
         <div class="prose">
-          <p>SKRA Tech develops software products and builds customised software for businesses. Our name stands for a simple loop: build the right thing, automate the work around it, and scale it as the business grows.</p>
+          <p>OCCPL SOFTECH develops software products and builds customised software for businesses. Our approach is a simple loop: build the right thing, automate the work around it, and scale it as the business grows.</p>
           <p>We are an early-stage company and we prefer to be direct about where we are. We have delivered a courier and logistics management solution that is operating at a client business, and we are currently working on another logistics implementation. Our logistics software is the first product, and our brand is designed to hold more.</p>
         </div>
       </div>

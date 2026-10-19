@@ -25,7 +25,7 @@ export class HomePage {
   ];
   protected readonly pills = ['Shipment booking', 'Branch & hub operations', 'Load sheets', 'Delivery runs', 'Proof of delivery', 'Role-based access'];
   protected readonly proof = [
-    { icon: 'check', title: 'Delivered and operating', text: 'A logistics software solution built by SKRA Tech is running at a client business today.' },
+    { icon: 'check', title: 'Delivered and operating', text: 'A logistics software solution built by OCCPL SOFTECH is running at a client business today.' },
     { icon: 'route', title: 'Another logistics project underway', text: 'We are currently working on a second logistics implementation for a different client.' },
     { icon: 'users', title: 'A small, focused team', text: 'You work with the engineers who design and build your software.' },
   ];

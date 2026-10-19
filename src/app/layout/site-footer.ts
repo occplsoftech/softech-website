@@ -43,7 +43,7 @@ import { Icon } from '../shared/icon';
           </ul>
         </div>
       </div>
-      <div class="ghost" aria-hidden="true">SKRA</div>
+      <div class="ghost" aria-hidden="true">OCCPL</div>
     </footer>
   `,
   styles: `
@@ -61,7 +61,7 @@ import { Icon } from '../shared/icon';
     a:not(.btn) { color: #98a2b8; text-decoration: none; transition: color 0.15s; &:hover { color: #fff; } }
     .bottom { position: relative; z-index: 1; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-block: 24px; border-top: 1px solid var(--line-dark); }
     .legal { display: flex; gap: 20px; li { margin: 0; } }
-    .ghost { font: 800 clamp(6rem, 24vw, 22rem)/0.78 var(--font-head); letter-spacing: -0.06em; text-align: center; margin-top: -10px; padding-bottom: 0; color: transparent; -webkit-text-stroke: 1px rgb(255 255 255 / 9%); user-select: none; transform: translateY(18%); }
+    .ghost { font: 800 clamp(5rem, 20vw, 18rem)/0.78 var(--font-head); letter-spacing: -0.06em; text-align: center; margin-top: -10px; padding-bottom: 0; color: transparent; -webkit-text-stroke: 1px rgb(255 255 255 / 9%); user-select: none; transform: translateY(18%); }
     @media (max-width: 720px) { .top { grid-template-columns: 1fr; } }
   `,
 })

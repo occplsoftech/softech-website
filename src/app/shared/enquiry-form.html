@@ -63,7 +63,7 @@
         <label class="check">
           <input type="checkbox" formControlName="consent" [attr.aria-invalid]="error('consent') ? 'true' : null"
             [attr.aria-describedby]="error('consent') ? id('consent-err') : null" />
-          <span>I agree that SKRA Tech may use these details to respond to my enquiry, as described in the
+          <span>I agree that OCCPL SOFTECH may use these details to respond to my enquiry, as described in the
             <a routerLink="/privacy" target="_blank">Privacy Policy</a>.</span>
         </label>
         @if (error('consent'); as e) { <p class="err" [id]="id('consent-err')">{{ e }}</p> }

@@ -11,7 +11,7 @@ import { PageHero } from '../../shared/page-hero';
   selector: 'app-products',
   imports: [RouterLink, PageHero, Icon, Mockup, CtaBand, ...EFFECTS],
   template: `
-    <app-page-hero eyebrow="Products" title="Software products built for real operations." lead="SKRA Tech is building a portfolio of software products. We are starting with logistics, where our first product is already in use." />
+    <app-page-hero eyebrow="Products" title="Software products built for real operations." lead="OCCPL SOFTECH is building a portfolio of software products. We are starting with logistics, where our first product is already in use." />
 
     <section class="section">
       <div class="container">

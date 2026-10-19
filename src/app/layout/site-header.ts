@@ -12,7 +12,7 @@ import { Icon } from '../shared/icon';
     <header class="wrap on-dark" [class.scrolled]="scrolled()">
       <div class="container">
         <div class="island">
-          <a routerLink="/" class="logo" aria-label="SKRA Tech home"><app-brand /></a>
+          <a routerLink="/" class="logo" aria-label="OCCPL SOFTECH home"><app-brand /></a>
 
           <nav id="primary-nav" class="nav" [class.open]="open()" aria-label="Primary">
             <ul>
