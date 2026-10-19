@@ -35,7 +35,24 @@
   </div>
 </section>
 
-<section class="section section--cloud" aria-labelledby="screens-h">
+<section class="section section--cloud" aria-labelledby="detail-h">
+  <div class="container">
+    <app-section-heading id="detail-h" eyebrow="In detail" title="Built for the whole operation." lead="A closer look at what each part of the software does." />
+    <div class="grid grid--3">
+      @for (g of c.details; track g.title) {
+        <article class="card">
+          <div class="card__icon"><app-icon [name]="g.icon" /></div>
+          <h3>{{ g.title }}</h3>
+          <ul class="check-list">
+            @for (i of g.items; track i) { <li>{{ i }}</li> }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="screens-h">
   <div class="container">
     <app-section-heading id="screens-h" eyebrow="Screens" title="A look at the interface." lead="Representative illustrations of the kinds of screens involved. They are not actual product screenshots." />
     <div class="grid grid--3 screens">
@@ -50,7 +67,7 @@
   </div>
 </section>
 
-<section class="section" aria-labelledby="flow-h">
+<section class="section section--cloud" aria-labelledby="flow-h">
   <div class="container">
     <app-section-heading id="flow-h" eyebrow="Workflow" title="How a shipment moves." />
     <ol class="flow">
@@ -61,7 +78,7 @@
   </div>
 </section>
 
-<section class="section section--cloud" aria-labelledby="who-h">
+<section class="section" aria-labelledby="who-h">
   <div class="container">
     <app-section-heading id="who-h" eyebrow="Who it is for" title="Ideal customer profiles." />
     <div class="grid grid--3">
@@ -72,7 +89,7 @@
   </div>
 </section>
 
-<section class="section" aria-labelledby="impl-h">
+<section class="section section--cloud" aria-labelledby="impl-h">
   <div class="container">
     <app-section-heading id="impl-h" eyebrow="Implementation" title="How we get you live." />
     <ol class="flow flow--4">
@@ -83,7 +100,7 @@
   </div>
 </section>
 
-<section class="section section--cloud" aria-labelledby="faq-h">
+<section class="section" aria-labelledby="faq-h">
   <div class="container container--narrow">
     <app-section-heading id="faq-h" eyebrow="FAQ" title="Frequently asked questions." />
     <div class="faqs">
@@ -94,7 +111,7 @@
   </div>
 </section>
 
-<section class="section" aria-labelledby="demo-h">
+<section class="section section--cloud" aria-labelledby="demo-h">
   <div class="container demo">
     <div>
       <span class="eyebrow">Demo enquiry</span>
