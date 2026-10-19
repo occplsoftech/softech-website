@@ -1,5 +1,5 @@
 {
-  "name": "skra-tech-website",
+  "name": "softech-website",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "postbuild": "cp dist/skra-tech-website/browser/index.csr.html dist/skra-tech-website/browser/404.html"
+    "postbuild": "cp dist/softech-website/browser/index.csr.html dist/softech-website/browser/404.html"
   },
   "private": true,
   "packageManager": "npm@11.17.0",

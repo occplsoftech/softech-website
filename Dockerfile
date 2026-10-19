@@ -7,4 +7,4 @@ RUN npx ng build
 
 FROM nginx:alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /app/dist/skra-tech-website/browser /usr/share/nginx/html
+COPY --from=build /app/dist/softech-website/browser /usr/share/nginx/html

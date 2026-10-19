@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "skra-tech-website": {
+    "softech-website": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -63,10 +63,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "skra-tech-website:build:production"
+              "buildTarget": "softech-website:build:production"
             },
             "development": {
-              "buildTarget": "skra-tech-website:build:development"
+              "buildTarget": "softech-website:build:development"
             }
           },
           "defaultConfiguration": "development"
