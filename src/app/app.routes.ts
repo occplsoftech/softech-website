@@ -65,6 +65,22 @@ export const routes: Routes = [
     data: seo({ title: 'Privacy Policy', description: 'How OCCPL SOFTECH collects, uses and protects personal information submitted through this website.' }),
   },
   {
+    path: 'privacy/courier-pro',
+    loadComponent: () => import('./pages/legal/courier-pro-privacy').then((m) => m.CourierProPrivacyPage),
+    data: seo({
+      title: 'Courier Pro Privacy Policy',
+      description: 'How the Courier Pro app by OCCPL SOFTECH handles staff, shipment and proof-of-delivery information.',
+    }),
+  },
+  {
+    path: 'courier-pro/delete-account',
+    loadComponent: () => import('./pages/legal/courier-pro-delete').then((m) => m.CourierProDeletePage),
+    data: seo({
+      title: 'Delete your Courier Pro account',
+      description: 'How to ask for your Courier Pro staff account and data to be deleted, and what is kept.',
+    }),
+  },
+  {
     path: 'terms',
     loadComponent: () => import('./pages/legal/terms').then((m) => m.TermsPage),
     data: seo({ title: 'Terms of Use', description: 'Terms governing use of the OCCPL SOFTECH website.' }),
