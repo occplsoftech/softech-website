@@ -41,6 +41,7 @@ import { Icon } from '../shared/icon';
           <small>© {{ year }} {{ name }}. All rights reserved.</small>
           <ul class="legal">
             <li><a routerLink="/privacy">Privacy Policy</a></li>
+            <li><a routerLink="/privacy/courier-pro">Courier Pro Privacy</a></li>
             <li><a routerLink="/terms">Terms of Use</a></li>
           </ul>
         </div>
