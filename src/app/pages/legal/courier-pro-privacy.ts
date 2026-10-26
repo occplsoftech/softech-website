@@ -43,6 +43,17 @@ import { PageHero } from '../../shared/page-hero';
           <li>Sender and receiver names, phone numbers and addresses, pincodes, package details (quantity, weight, size), declared and invoice values, E-Way Bill details, service, payment mode and charges.</li>
           <li>Loading sheets, trip hire challans (THC), delivery run sheets (DRS), vehicle and driver details, and the movement history of each shipment.</li>
         </ul>
+        <h3>Branch wallet and payments</h3>
+        <ul>
+          <li>Wallet balance, recharges, top-up requests (amount, remarks and the proof-of-payment photo you attach), manual credits and debits, and the wallet ledger, so the branch can prepay for courier services and keep receipts.</li>
+          <li>
+            Wallet recharges are paid through <strong>Razorpay</strong>, the payment processor. Card, UPI, net banking and
+            wallet details are entered in Razorpay's own checkout and go directly to Razorpay; the app and our servers never
+            see or store them. We keep the amount, the Razorpay order and payment IDs, the payment status and the date.
+            Razorpay's checkout may collect device details to prevent payment fraud, as described in
+            <a href="https://razorpay.com/privacy/" target="_blank" rel="noopener">Razorpay's privacy policy</a>.
+          </li>
+        </ul>
         <h3>Proof of delivery</h3>
         <ul>
           <li>Delivery photos taken with the camera or chosen from the photo gallery, the receiver's signature drawn on the screen, the receiver's name, remarks and the delivery time.</li>
@@ -62,12 +73,14 @@ import { PageHero } from '../../shared/page-hero';
           <li>Location. The app does not read your location. When you tap Navigate, the delivery address is opened in your maps app, which is covered by that app's own policy.</li>
           <li>Contacts, call logs, SMS, files outside what you choose to attach, or the advertising ID.</li>
           <li>Analytics or advertising data. The app contains no advertising or analytics software.</li>
+          <li>Card numbers, CVV, UPI PIN or bank passwords. These are entered only in Razorpay's checkout.</li>
         </ul>
 
         <h2>Permissions</h2>
         <ul>
           <li><strong>Camera</strong>: to scan shipment barcodes and QR codes and to take proof-of-delivery photos. Used only when you open the scanner or take a photo.</li>
           <li><strong>Internet and network status</strong>: to talk to the courier company's server and to tell you when you are offline.</li>
+          <li><strong>NFC and basic phone state</strong>: added by Razorpay's checkout for tap-to-pay cards and UPI payments. They are used only during a payment and cannot read your phone number, calls or messages.</li>
         </ul>
         <p>Choosing a photo from the gallery uses Android's photo picker, which gives the app only the photo you pick.</p>
 
@@ -75,6 +88,7 @@ import { PageHero } from '../../shared/page-hero';
         <ul>
           <li>To run courier operations: booking, tracking, loading, dispatch, receiving, delivery and proof of delivery.</li>
           <li>To work out charges and produce labels, loading sheets, THC, DRS and POD documents.</li>
+          <li>To recharge and manage the branch wallet and issue wallet receipts.</li>
           <li>To control access by role and branch, keep an audit trail and prevent misuse.</li>
         </ul>
         <p>We do not sell personal information and do not use it for advertising.</p>
@@ -84,6 +98,7 @@ import { PageHero } from '../../shared/page-hero';
           <li>Authorised staff of the courier company, limited by their role and branch.</li>
           <li>The sender and receiver of a shipment, through the courier company's tracking page and notifications (tracking shows a limited view).</li>
           <li>Service providers that host the software and store files, and messaging providers the courier company uses for shipment notifications. They process information only to provide those services.</li>
+          <li>Razorpay, to process wallet recharge payments.</li>
           <li>Authorities, where the law requires it.</li>
         </ul>
         <p>Documents you print or share from the app go only where you choose to send them.</p>
@@ -122,5 +137,5 @@ import { PageHero } from '../../shared/page-hero';
   `,
 })
 export class CourierProPrivacyPage {
-  protected readonly updated = '24 October 2026';
+  protected readonly updated = '26 October 2026';
 }
